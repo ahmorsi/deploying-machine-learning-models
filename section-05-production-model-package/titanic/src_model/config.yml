@@ -1,0 +1,45 @@
+# Package Overview
+package_name: src_model
+
+# Data Files
+training_data_file: train.csv
+test_data_file: test.csv
+
+# Variables
+# The variable we are attempting to predict (sale price)
+target: survived
+
+pipeline_name: titanic_model
+pipeline_save_file: titanic_model_output_v
+
+features:
+  - pclass
+  - sex
+  - age
+  - sibsp
+  - parch
+  - fare
+  - cabin
+  - embarked
+  - title
+
+# set train/test split
+test_size: 0.2
+
+# to set the random seed
+random_state: 0
+
+c: 0.0005
+
+numerical_vars:
+  - age
+  - fare
+
+categorical_vars:
+  - sex
+  - cabin
+  - embarked
+  - title
+
+categorical_vars_first_letter_extract:
+  - cabin
